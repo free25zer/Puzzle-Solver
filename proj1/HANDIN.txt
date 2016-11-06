@@ -1,0 +1,123 @@
+Student Name #1: James Ward
+Student ugrad login #1: i5a0b
+
+Student Name #2: Egor Peshkov
+Student ugrad login #2: TODO: v3b0b
+
+Team name (for fun!): Team Tortoise
+
+Acknowledgment that you understand and have followed the course's
+collaboration policy
+(http://www.ugrad.cs.ubc.ca/~cs221/current/syllabus.shtml#conduct):
+
+TODO: [[Put your names here again as a signature]]
+   James Ward   Egor Peshkov
+
+TODO: submit using: make handin-proj1
+
+----------------------------------------------------------------------
+
+Approximate hours on project: TODO: 18 each
+
+----------------------------------------------------------------------
+
+For teams, rough breakdown of work:
+
+James: Intial code-up, getting it to compile.
+
+Egor: Edits for style, corrections, making a second draft. Took the lead on the heapqueue
+
+James/Egor: Going back and forth fixing all the bugs from there.
+
+HANDIN and EARLYBIRD answers typed up by James, with help from Egor.
+
+----------------------------------------------------------------------
+
+Acknowledgment of assistance: TODO:
+C++ reference site: cplusplus.com/reference
+Piazza
+
+
+----------------------------------------------------------------------
+
+Questions:
+
+For the explanations, generally a sentence or two should be enough.
+Type your answers directly in this file.
+
+
+1.  Edit solve.cpp to use either of your queue classes to solve Mazes
+1, 2, 3, and 4.  Set a large enough delay in the solveMaze function
+(like 200000) to watch what's happening.  Do you see why this is called
+breadth-first search (BFS)?  How many steps long were your solutions?
+How does this compare with DFS?
+
+TODO: 
+maze 1: 58 steps.
+maze 2: 14 Steps.
+maze 3: 5 steps.
+maze 4: 90 steps.
+
+
+Breadth first search: if presented with a number of possible options, or paths it could take, the algorithm  will try the first step down each of the paths, then try the second step down each of those paths, etc. 
+
+Depth first search on the other hand, will follow one path entirely to its completion, and only then look at the second path and so on.
+
+2.  Try to solve the blank Sudoku board using your ArrayQueue
+and LinkedListQueue classes.  What happens?  Why?
+
+TODO: Rather inefficiently, it goes through and tries literally every possible sudoku board by incrementing the latest entry through all the options then changing the one behind it, etc.
+
+This is the folly of breadth first search. It would go through nearly all the options, approaching 9! (a lot).
+
+3.  Switch to the medium-difficulty Sudoku problem, and comment
+out the delay and the print statements in the solveMaze function.
+How long does it take to solve the puzzle using your ArrayQueue
+class?  Using your LinkedListQueue class?  Is the difference big?
+
+TODO:
+
+LinkedListQueue: 1 minute, 1.18 seconds.
+
+ArrayQueue: 1 minute, 0.25 seconds. 
+
+Pretty close. 
+
+4.  Edit solve.cpp to switch to the 4x4 and then 5x5 slider puzzles.
+Make sure to comment out the delay and print statements in the solveMaze
+function.  How long does it take to solve these puzzles with your
+HeapPriorityQueue versus my UnsortedPriorityQueue?  For most students,
+mine will be faster?  Why might that happen?  Are the asymptotic
+runtimes for the heap versus the unsorted array wrong?
+
+TODO:
+
+
+
+ UnsortedPriorityQueue:
+  4 x 4: 5.3 seconds.
+  5 x 5: 2 minutes, 38 seconds
+
+ HeapPriorityQueue:
+  4 x 4:  
+  5 x 5: Both Longer than we had patience for. 
+ 
+ Asymptotic Runtime for unsortedPriority Queue:
+ 
+ insert: constant
+ remove/find  min: O(n)
+
+ Asymptotic runtime for heapPriority Queue:
+  insert: O(logn)
+  find min: constant
+  remove min: O(log n)   //Faster?
+
+Why might that happen?
+
+Well, both methods are priority queues which compare values, and therefore they must have some method to break ties.
+Considering that the values (Badnesses) aren't nessecairly exactly accurate, this can have some drastic effects - perhaps one queue happens to have a better policy than the other. 
+
+----------------------------------------------------------------------
+
+We will be checking your implementations of ArrayQueue, LinkedListQueue,
+and HeapPriorityQueue.
