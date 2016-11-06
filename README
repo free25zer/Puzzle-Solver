@@ -1,0 +1,14 @@
+This project was done as a part of the UBC curriculum
+I collaborated with James Ward on this project
+
+In proj1 we implemented:
+  ArrayQueue
+  ArrayStack
+  HeapPriorityQueue
+  LinkedListQueue
+  LinkedListStack
+  
+In proj2 we implementd:
+  AVLDict
+  DoubleHashDict
+  LinearHashDict
